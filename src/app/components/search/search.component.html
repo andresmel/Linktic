@@ -1,0 +1,12 @@
+<div class="container-search">
+  <select class="form-select" (change)="searchRegion($event)">
+    <option selected disabled>Filtre por Región</option>
+    <option value="europe">Europa</option>
+    <option value="asia">Asia</option>
+    <option value="africa">Africa</option>
+    <option value="oceania">Oceania</option>
+    <option value="america">America</option>
+ </select>
+  <input class="form-control" placeholder=" Buscar pais" (input)="searchPaises($event)">
+
+</div>

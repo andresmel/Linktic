@@ -1,0 +1,17 @@
+.navbar-pr{
+  background-color: rgb(255, 255, 255);
+   z-index: 9;
+}
+
+.navbar-pr .container-fluid{
+  width: 400px !important;
+  margin-left: 0% !important;
+}
+
+.navbar-sc{
+  background-color: rgb(92, 98, 99);
+  font-size: 55px !important;
+  padding: none;
+  height: 80px !important;
+}
+

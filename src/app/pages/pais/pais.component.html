@@ -1,0 +1,48 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="container-pais">
+  <div class="present-country">
+    <div class="present-header">
+      <button class="btn btn-secondary" (click)="back()">Regresar</button>
+      <span>
+        <h3>{{pais.name?.official}}</h3>
+      </span>
+
+    </div>
+    <div class="present-imagen">
+      <img [src]="pais.flags?.png" width="319" height="216" />
+    </div>
+    <div class="present-info">
+      <ul>
+        <li>
+          Capital : {{pais.capital}}
+        </li>
+        <li>
+          Area : {{pais.area}}
+        </li>
+        <li>
+          Monedas : {{pais.currencies?.XAF?.name}}
+        </li>
+        <li>
+          Población : {{pais.population}}
+        </li>
+        <li>
+          Region : {{pais.region}}
+        </li>
+        <li>
+          Estado : {{pais.status}}
+        </li>
+        <li>
+          Sub Region : {{pais.subregion}}
+        </li>
+        <li>
+          Comienzo de semana : {{pais.startOfWeek}}
+        </li>
+        <li>
+          <a [href]="pais.maps?.openStreetMaps" target="_blank">Ver ubicación con google maps</a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>

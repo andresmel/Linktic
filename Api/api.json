@@ -1,0 +1,9 @@
+{
+"apiPaises": {
+  "urls": {
+    "getPaises": "https://restcountries.com/v3.1/all?fields=name,flags",
+    "getRegion":"https://restcountries.com/v3.1/region/",
+    "getPais":"https://restcountries.com/v3.1/name/"
+  }
+}
+}

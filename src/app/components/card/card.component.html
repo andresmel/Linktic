@@ -1,0 +1,6 @@
+<div (click)="getPais(item)" class="card" data-bs-toggle="tooltip" data-bs-placement="left" title="Click paara ver mas informacion">
+  <div class="card-title">
+    <h6>{{item.name.common}}</h6>
+  </div>
+  <img class="card-image" [src]="item.flags.png" width="140" height="100" />
+</div>
