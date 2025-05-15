@@ -1,27 +1,77 @@
 # Lintic
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+Proyecto angular con la version 18.2.12. diseñada para mostrar la lista de todos los paises del mundo.
+puede filtrar por nombre de pais o filtrar por región. al hacer click en cualquier pais le mostrara mas informacion relevante. podra visualizar el mapa de localizacion,
 
-## Development server
+## desarrollo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+dirige a la aplicación donde encontrará una lista de países, un page países dentro de layout principal. en este layout se enrutan todas las vistas de la aplicación.  al iniciar se hace un llamado a la api que trae toda la lista de países. Encontrar un componente buscador tanto por nombre de país como por región. al hacer click en uno de los países lo dirige a la vista país donde hay mas información detallada. el parámetro este encriptado en la url de la aplicación. es responsiva toda la aplicación.
 
-## Code scaffolding
+## patrones de diseño
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+singleton: En el servicio encriptar descencriptar. se instaanci unaa sola vez y puede ser utilizad por cualquier componente aa travez de sus metodos
+
+Inversion de control: Se crea funciones a travez de sistemas externos sin declaarar manualemnte.
+ejemplo: no utilizar http.. = new httpclien() para instanciar
+
+patron observador: los cambios en un componente que se reflejan en otros componentes. use de eventemitter
+
+
+## 📦 Tecnologías
+
+- Angular 18
+- TypeScript
+- RxJS
+- Angular CLI
+- Bootstrap 
+- Api REST Countries
+
+## 📂 Estructura del Proyecto
+
+Api                       # urls de los diferentes End point a consumir
+src/
+├── app/
+│   ├── components/       # Componentes reutilizables
+│   ├── pages/            # Vistas principales
+│   ├── services/         # Lógica de negocio y peticiones HTTP
+│   ├── Layout            # Componente principal donde renderiza toda la aplicacion
+│   ├── utils/            # Funciones auxiliares (encriptación)
+│   └── routers           # rutas principales y sus rutas hijas
+├── assets/               # Imágenes y  archivos 
+└── index.html
+
+# Clonar el repositorio
+git clone https://github.com/andresmel/Linktic.git
+cd tu-repo
+
+# Instalar dependencias
+npm install
+
+# Servir la app en local
+ng serve
+
+# Abrir en el navegador:
+http://localhost:4200
+
+
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+hacer `ng build` paar hacer build al proyecto. en la carpeta dist estara laa aplicacion lista para publicar en produccion.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+hacer `ng test` paara ejecutar los test con [Karma](https://karma-runner.github.io).
+# Compilar para producción
+ng build --configuration production
 
-## Running end-to-end tests
+# Ejecutar pruebas unitarias
+ng test
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Linting
+ng lint
 
-## Further help
+## Autor
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Andres Mauricio Melo
+Desarrollador Full stack
