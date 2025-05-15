@@ -1,9 +1,9 @@
 <app-loading *ngIf="loading"></app-loading>
 <app-search (textSearch)="filtrarPaises($event)" (textRegion)="filtrarRegion($event)"></app-search>
  <div class="containerCard">
-    <ul>
-      <li *ngFor="let pais of listPaises">
-           <app-card [item]="pais" ></app-card>
-      </li>
-    </ul>
+
+
+           <app-card *ngFor="let pais of listPaises" [item]="pais" ></app-card>
+
+
  </div>

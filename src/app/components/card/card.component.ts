@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EncriptService } from '../../utils/encript.service';
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -10,10 +11,13 @@ import { Router } from '@angular/router';
 export class CardComponent {
    @Input() item!:any;
 
-   constructor(private _route:Router){}
+   constructor(
+    private _route:Router,
+    private _encript:EncriptService
+    ){}
 
    getPais(item:any){
-     const name=item.name.common;
+     const name=this._encript.encryptInfo(item.name.common);
      this._route.navigate(["/dashboard/pais",name])
    }
 

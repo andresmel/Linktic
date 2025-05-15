@@ -3,6 +3,7 @@ import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { PaisesService } from '../../services/paises.service';
 import { LoadingComponent } from "../../components/loading/loading.component";
+import { EncriptService } from '../../utils/encript.service';
 @Component({
   selector: 'app-pais',
   standalone: true,
@@ -17,7 +18,8 @@ export class PaisComponent {
    constructor(
     private _acroute:ActivatedRoute,
     private _service:PaisesService,
-    private _route:Router
+    private _route:Router,
+    private _decript:EncriptService
     ){
     this.pais=[];
     this.name="";
@@ -33,7 +35,8 @@ export class PaisComponent {
 
    getPais(){
     this.loading=true;
-    this.name =this._acroute.snapshot.paramMap.get('name');
+    this.name=this._acroute.snapshot.paramMap.get('name');
+    this.name=this._decript.decryptInfo(this.name);
     this._service.getPais(this.name).subscribe({
       next:(data:any)=>{
          this.pais=data[0];
